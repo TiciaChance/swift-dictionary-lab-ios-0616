@@ -14,13 +14,14 @@
  */
 // write your code here
 
+var statesAndCapitals = ["New York": "Albany", "Ohio": "Columbus", "Florida": "Tallahassee", "Georgia":"Atlanta", "Kentucky": "Frankfort"]
 
 
 
 /*: question2
  ### 2. What is the type of the dictionary you created in Question 1?
  */
-
+//[String: String]
 
 
 
@@ -29,6 +30,7 @@
  */
 // write your code here
 
+var capitalOfFL = statesAndCapitals["Florida"]
 
 
 
@@ -37,7 +39,9 @@
  */
 // write your code here
 
-
+if let capitalOfFL = capitalOfFL {
+    print("The capital of Florida is \(capitalOfFL)")
+}
 
 
 /*: question5
@@ -45,7 +49,7 @@
  */
 // write your code here
 
-
+let anotherCapital = statesAndCapitals["Pennsylvania"]
 
 
 /*: question6
@@ -53,7 +57,11 @@
  */
 // write your code here
 
-
+if let capitalOfPa = anotherCapital {
+    print("The caital of PA is \(capitalOfPa)")
+}else {
+    print("I don't know Pennsylvania's capital")
+}
 
 
 /*: question7
@@ -61,15 +69,18 @@
  */
 // write your code here
 
-
-
-
+statesAndCapitals["Pennsylvania"] = "Harrisburg"
 /*: question8
  ### 8. Retrieve Pennsylvania's capital from your dictionary. Unwrap it and print the message "Pennsylvania's capital is <Capital>" to the console.
  */
 // write your code here
 
+let harrisburg = statesAndCapitals["Pennsylvania"]
 
+
+if let harrisburg = harrisburg {
+    print("Pennsylvania's capital is \(harrisburg)")
+}
 
 
 /*: question9
@@ -79,14 +90,21 @@
 
 
 
-
+statesAndCapitals["Pennsylvania"] = nil
+print(statesAndCapitals)
 /*: question10
  ### 10. You have been given the constant `state` with a state name. Use that constant to retrieve the state's capital from the dictionary. Print "The capital of <State> is <Capital>" to the console.
  */
 let state = "New York"
 // write your code here
 
+print("The capital of \(state) is \(statesAndCapitals[state]!)")
 
+// same thing w/o force unwrapping 
+
+if let albany = statesAndCapitals[state] {
+    print("The capital of \(state) is \(albany)")
+}
 
 
 /*: question11
@@ -102,14 +120,14 @@ let state = "New York"
 // write your code here
 
 
-
+let bandMembers = ["Nirvana": ["Kurt Cobain", "Krist Novoselic", "Dave Grohl"], "The Beatles": ["John Lennon", "George Harrison", "Paul McCartney", "Ringo Starr"], "Pixies": ["Frank Black", "Joey Santiago", "Kim Deal", "David Lovering"]]
 
 /*: question12
  ### 12. What is the type of the dictionary you created in Question 11?
  */
 
 
-
+// [String:Array<string>]
 
 /*: question13
  ### 13. You have been given a band name in the constant `band` below. Use that band name to retrieve its list of members from the array you created in Question 11. Then unwrap that list of members and print it to the console.
@@ -118,7 +136,7 @@ let bandName = "Pixies"
 // write your code here
 
 
-
+bandMembers[bandName]
 
 /*:
  [Solution](solution)
